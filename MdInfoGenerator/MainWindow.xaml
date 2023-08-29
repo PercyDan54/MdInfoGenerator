@@ -1,0 +1,34 @@
+﻿<Window x:Class="MdInfoGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:MdInfoGenerator"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        mc:Ignorable="d"
+        Height="600" Width="1200" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <materialDesign:ColorZone Padding="16" Mode="PrimaryMid">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Margin="16,0,0,0" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" Text="Muse Dash Modding Community(MDMC)谱面文件info.json生成工具  Code by GreenHub | C# rewrite by PercyDan"/>
+                </StackPanel>
+            </materialDesign:ColorZone>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <local:LabelledTextBox x:Name="directoryLabelledTextBox" x:FieldModifier="private" LabelText="目录" Margin="0,0,50,20"/>
+                <Button x:Name="browseButton" x:FieldModifier="private" Content="浏览" Click="browseButton_Click"></Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <local:MapInfoEditor x:Name="map1Editor" Title="map1.bms"></local:MapInfoEditor>
+                <local:MapInfoEditor x:Name="map2Editor" Title="map2.bms"></local:MapInfoEditor>
+                <local:MapInfoEditor x:Name="map3Editor" Title="map3.bms"></local:MapInfoEditor>
+                <local:MapInfoEditor x:Name="map4Editor" Title="map4.bms"></local:MapInfoEditor>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <local:LabelledTextBox></local:LabelledTextBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
