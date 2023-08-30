@@ -20,11 +20,11 @@ namespace MdInfoGenerator
             {
                 SongTitle = SongTitleTextBox.TextBox.Text,
                 Author = AuthorTextBox.TextBox.Text,
-                ChartDesign = ChartDesignTextBox.TextBox.Text,
+                ChartDesign = string.IsNullOrEmpty(ChartDesignTextBox.TextBox.Text) ? "?" : ChartDesignTextBox.TextBox.Text,
                 Scene = SceneTextBox.TextBox.Text,
                 Bpm = BpmTextBox.TextBox.Text,
-                Dfficulty = DifficultyTextBox.TextBox.Text,
-                Level = LevelTextBox.TextBox.Text,
+                Dfficulty = string.IsNullOrEmpty(DifficultyTextBox.TextBox.Text) ? "?" : DifficultyTextBox.TextBox.Text,
+                Level = string.IsNullOrEmpty(LevelTextBox.TextBox.Text) ? "?" : LevelTextBox.TextBox.Text,
             };
         }
     }

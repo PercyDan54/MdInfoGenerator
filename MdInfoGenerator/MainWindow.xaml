@@ -17,17 +17,26 @@
                 </StackPanel>
             </materialDesign:ColorZone>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <local:LabelledTextBox x:Name="directoryLabelledTextBox" x:FieldModifier="private" LabelText="目录" Margin="0,0,50,20"/>
-                <Button x:Name="browseButton" x:FieldModifier="private" Content="浏览" Click="browseButton_Click"></Button>
+                <local:LabelledTextBox x:Name="directoryLabelledTextBox" x:FieldModifier="private" TextBoxMinWidth="500" LabelText="目录" Margin="0,0,50,20"/>
+                <Button x:Name="browseButton" x:FieldModifier="private" Content="浏览" Click="browseButton_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <local:MapInfoEditor x:Name="map1Editor" Title="map1.bms"></local:MapInfoEditor>
-                <local:MapInfoEditor x:Name="map2Editor" Title="map2.bms"></local:MapInfoEditor>
-                <local:MapInfoEditor x:Name="map3Editor" Title="map3.bms"></local:MapInfoEditor>
-                <local:MapInfoEditor x:Name="map4Editor" Title="map4.bms"></local:MapInfoEditor>
+                <local:MapInfoEditor x:Name="map1Editor" Title="map1.bms"/>
+                <local:MapInfoEditor x:Name="map2Editor" Title="map2.bms"/>
+                <local:MapInfoEditor x:Name="map3Editor" Title="map3.bms"/>
+                <local:MapInfoEditor x:Name="map4Editor" Title="map4.bms"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <local:LabelledTextBox></local:LabelledTextBox>
+            <StackPanel Orientation="Horizontal" Margin="20,0,0,30">
+                <local:LabelledTextBox x:Name="hideBmsMessageTextBox" LabelText="map4提示信息" TextBoxMinWidth="250"/>
+                <local:LabelledComboBox x:Name="hideBmsModeComboBox" LabelText="里谱解锁方式" Margin="35,0,0,0">
+                    <local:LabelledComboBox.DataContext>
+                        <local:MapInfo/>
+                    </local:LabelledComboBox.DataContext>
+                </local:LabelledComboBox>
+                <local:LabelledComboBox x:Name="hideBmsDifficultyComboBox" LabelText="里谱解锁等级" ComboBoxMaxWidth="400" Margin="35,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="exportInfoJsonButton" Content="导出 info.json" IsEnabled="False" Click="exportInfoJsonButton_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>
